@@ -151,40 +151,35 @@ int main() {
     ColorInfo colorOne;
     ColorInfo colorTwo;
     float avgDiff;
-    bool repeat = false;
 
-    while (!repeat) {
-        std::cout << "Enter the first color's name (no spaces): ";
-        std::cin >> colorOne.colorName;
-        std::cout << "Enter the first color's hex code (i.e. 'c4728b'): ";
-        std::cin >> colorOne.hexCode;
-        std::cout << "So, your first color is " << colorOne.colorName << " and it's hex code is " << colorOne.hexCode << "\n";
-        colorOne.redVal = hexTranslate(colorOne.hexCode);
-        colorOne.blueVal = hexTranslate(colorOne.hexCode.substr(2,2));
-        colorOne.greenVal = hexTranslate(colorOne.hexCode.substr(4,2));
-        colorOne.grayVal = (colorOne.redVal) * 0.299 + (colorOne.greenVal) * 0.587 + (colorOne.blueVal) * 0.114;
+    std::cout << "Enter the first color's name (no spaces): ";
+    std::cin >> colorOne.colorName;
+    std::cout << "Enter the first color's hex code (i.e. 'c4728b'): ";
+    std::cin >> colorOne.hexCode;
+    std::cout << "So, your first color is " << colorOne.colorName << " and it's hex code is " << colorOne.hexCode << "\n";
+    colorOne.redVal = hexTranslate(colorOne.hexCode);
+    colorOne.blueVal = hexTranslate(colorOne.hexCode.substr(2,2));
+    colorOne.greenVal = hexTranslate(colorOne.hexCode.substr(4,2));
+    colorOne.grayVal = (colorOne.redVal) * 0.299 + (colorOne.greenVal) * 0.587 + (colorOne.blueVal) * 0.114;
 
-        std::cout << "Enter the second color's name (no spaces): ";
-        std::cin >> colorTwo.colorName;
-        std::cout << "Enter the second color's hex code (i.e. 'c4728b'): ";
-        std::cin >> colorTwo.hexCode;
-        std::cout << "So, your second color is " << colorTwo.colorName << " and it's hex code is " << colorTwo.hexCode << "\n";
-        colorTwo.redVal = hexTranslate(colorTwo.hexCode);
-        colorTwo.blueVal = hexTranslate(colorTwo.hexCode.substr(2,2));
-        colorTwo.greenVal = hexTranslate(colorTwo.hexCode.substr(4,2));
-        colorTwo.grayVal = (colorTwo.redVal) * 0.299 + (colorTwo.greenVal) * 0.587 + (colorTwo.blueVal) * 0.114;
+    std::cout << "Enter the second color's name (no spaces): ";
+    std::cin >> colorTwo.colorName;
+    std::cout << "Enter the second color's hex code (i.e. 'c4728b'): ";
+    std::cin >> colorTwo.hexCode;
+    std::cout << "So, your second color is " << colorTwo.colorName << " and it's hex code is " << colorTwo.hexCode << "\n";
+    colorTwo.redVal = hexTranslate(colorTwo.hexCode);
+    colorTwo.blueVal = hexTranslate(colorTwo.hexCode.substr(2,2));
+    colorTwo.greenVal = hexTranslate(colorTwo.hexCode.substr(4,2));
+    colorTwo.grayVal = (colorTwo.redVal) * 0.299 + (colorTwo.greenVal) * 0.587 + (colorTwo.blueVal) * 0.114;
 
-        avgDiff = abs(colorOne.grayVal - colorTwo.grayVal);
+    avgDiff = abs(colorOne.grayVal - colorTwo.grayVal);
 
-        if (avgDiff > 30) {
-            std::cout << "Your colors are very different. There is no issue.";
-        } else if (avgDiff > 10) {
-            std::cout << "Your colors are somewhat different. There will likely be no issue.";
-        } else {
-            std::cout << "Your colors are too similar. Please change the values to make the difference more stark.";
-        }
-        std::cout << "\n" << "Would you like to continue? Enter '0' to continue, '1' to exit: " << "\n";
-        std::cin >> repeat;
+    if (avgDiff > 30) {
+        std::cout << "Your colors are very different. There is no issue.";
+    } else if (avgDiff > 10) {
+        std::cout << "Your colors are somewhat different. There will likely be no issue.";
+    } else {
+        std::cout << "Your colors are too similar. Please change the values to make the difference more stark.";
     }
 
     return 0;
