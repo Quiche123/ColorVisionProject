@@ -1,15 +1,19 @@
-# Replace with your unique project name
+# Color Vision Project
+
+## Getting Started
+
+Program now stores values into a .txt file, as well as a vector. Program is more efficient, and has better readability by using functions.
 
 ## Description
 
-**version 1.0**
+**version 2.0**
 
-Replace with a description of *what* your program does (not *how* it works)
+Gets two color values, compares them, and stores them.
 
 
 ## Developer
 
-Replace with your name
+Adithya Senthil
 
 ## Example
 
